@@ -16,7 +16,7 @@
     --btn-blue-active: #88d;
   }
   
-  /* all elements, before and after have no padding or margin  */
+  /* all elements, before and after have no padding or margin, border box makes it easier to style elements  */
   *,
   *::before,
   *::after {
@@ -50,7 +50,7 @@
   }
   
   /* MAIN */
-  /* center main content section to flex*/
+  /* center main content section to flex, min height makes calculator fill out the height*/
   .main {
     display: flex;
     align-items: center;

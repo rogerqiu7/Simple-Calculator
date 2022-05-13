@@ -10,7 +10,7 @@ let shouldResetScreen = false
 // and which actions call which functions along with its arguement
 
 //set variables for all html elements
-//data number and data operators are selected based on text
+// querySelectorAll selects all numbers and operators selects all operators
 const numberButtons = document.querySelectorAll('[data-number]')
 const operatorButtons = document.querySelectorAll('[data-operator]')
 const equalsButton = document.getElementById('equalsBtn')
