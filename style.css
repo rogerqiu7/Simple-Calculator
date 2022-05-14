@@ -1,166 +1,105 @@
-/* Set universal colors */
-:root {
-    --background: #F5FCFF;
-    --font: #1F2937;
-    --border: #1F2937;
-    --screen: #eee;
-    --calculator: #1F2937;
-    --btn: #eee;
-    --btn-hover: #ddd;
-    --btn-active: #ccc;
-    --btn-red: #faa;
-    --btn-red-hover: #e99;
-    --btn-red-active: #d88;
-    --btn-blue: #aaf;
-    --btn-blue-hover: #99e;
-    --btn-blue-active: #88d;
-  }
-  
-  /* all elements, before and after have no padding or margin, border box makes it easier to style elements  */
-  *,
-  *::before,
-  *::after {
+/* change to border box for easier sizing */
+*, 
+*::before, 
+*::after {
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
     padding: 0;
     margin: 0;
-  }  
-  
-  /* set body background color, accent color, font and line height */
-  body {
-    background-color: var(--background);
-    color: var(--font);
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
   }
 
-  /* set button elements to no borders and inherit from buttons-grid class*/  
-  button {
-    border: none;
-    color: inherit;
-    font-family: inherit;
-    font-size: inherit;
-    cursor: pointer;
-    outline: none;
-  }
-
-  /* center and englargen title */
-  .title {
+/* center and englargen title */
+.title {
+    color: white;
+    margin-top: 50px;
     text-align: center;
     font-size: 80px;
   }
   
-  /* MAIN */
-  /* center main content section to flex, min height makes calculator fill out the height*/
-  .main {
-    display: flex;
-    align-items: center;
+  /* dark background color */
+  body {
+    background: #091921;
+  }
+  
+  /* grid, center everything, take full height, grid temaplate columns and rows set sizing*/
+  .calculator-grid {
+    display: grid;
     justify-content: center;
-    height: 75vh;
+    align-content: center;
+    margin-top: 50px;
     min-height: 500px;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+  }
+  
+  /* select all buttons inside grid, pointer, font border and background */
+  .calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    color: white;
+    border: 1px solid #091921;
+    background-color: #0c2835;
+  }
+  
+  /* change hover color to neon green */
+  .calculator-grid > button:hover {
+    background-color: #74ff3b;
+    color:black;
+  }
+  
+  /* buttons to take 2 width */
+  .span-two {
+    grid-column: span 2;
+  }
+  
+  /* output screen,screen fills all the way from 1 to -1, white color, flex align items to flex end to be on right and justify space around to space between elements. flex direction column so they line up veritcally, add padding to push items closer to center. use word wrap to break words*/
+  .output {
+    grid-column: 1 / -1;
+    background-color: white;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
     padding: 10px;
-  }
-  
-   /* set calculator width, border size, radius, padding and color*/
-  .calculator {
-    width: 400px;
-    border: 2px var(--border) solid;
-    border-radius: 15px;
-    padding: 20px;
-    background-color: var(--calculator);
-  }
-  
-  /* set screen padding, border size, radius, margin. padding and color*/
-  .screen {
-    padding: 10px 20px;
-    border: 2px var(--border) solid;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    background-color: var(--screen);
-    text-align: right;
     word-wrap: break-word;
     word-break: break-all;
   }
   
-  /* last operation style*/
-  .screen-last {
-    min-height: 32px;
-    font-size: 20px;
+  /* previous operand output color and size */
+  .output .previous-operand {
+    color: grey;
+    font-size: 1.5rem;
   }
   
-  /* current operation style*/
-  .screen-current {
-    min-height: 64px;
-    font-size: 40px;
+  /* current operand color and size */
+  .output .current-operand {
+    color: black;
+    font-size: 2.5rem;
   }
-  
-  /* style for the buttons grid, create grid template*/
-  .buttons-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
-  }
-  
-  /* style for buttons spanning 2 columns*/
-  .span-2 {
-    grid-column: span 2;
-  }
-  
-  /* set button and hover styles */
-  .btn {
-    padding: 20px;
-    border: 2px var(--border) solid;
-    border-radius: 5px;
-    background-color: var(--btn);
-    font-size: 20px;
-  }
-  
-  .btn:hover {
-    background-color: var(--btn-hover);
-  }
-  
-  .btn:active {
-    background-color: var(--btn-active);
-  }
-  
-  .btn-red {
-    background-color: var(--btn-red);
-  }
-  
-  .btn-red:hover {
-    background-color: var(--btn-red-hover);
-  }
-  
-  .btn-red:active {
-    background-color: var(--btn-red-active);
-  }
-  
-  .btn-blue {
-    background-color: var(--btn-blue);
-  }
-  
-  .btn-blue:hover {
-    background-color: var(--btn-blue-hover);
-  }
-  
-  .btn-blue:active {
-    background-color: var(--btn-blue-active);
-  }
-  
-  /* FOOTER */
-  
-/* set footer to be at bottom of page */
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background-color: #1F2937;
-  font-size: 16px;
-  color: #fff;
-  font-family: 'Roboto', arial;
-  text-align: center;
+
+/* all clear button color */
+#ac {
+    background: #ff3077;
 }
 
-/* let visited github link to remain white */
-a:visited {
-  color: white;
+/* change equal color */
+#equal {
+    background: #03b1ff;
 }
+
+/* set footer to be at bottom of page */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    font-size: 16px;
+    color: #fff;
+    font-family: 'Roboto', arial;
+    text-align: center;
+  }
+  
+  /* let visited github link to remain white */
+  a:visited {
+    color: white;
+  }
