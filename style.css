@@ -1,105 +1,105 @@
 /* change to border box for easier sizing */
-*, 
-*::before, 
+*,
+*::before,
 *::after {
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-    padding: 0;
-    margin: 0;
-  }
+	box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
+	padding: 0;
+	margin: 0;
+}
 
 /* center and englargen title */
 .title {
-    color: white;
-    margin-top: 50px;
-    text-align: center;
-    font-size: 80px;
-  }
-  
-  /* dark background color */
-  body {
-    background: #091921;
-  }
-  
-  /* grid, center everything, take full height, grid temaplate columns and rows set sizing*/
-  .calculator-grid {
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    margin-top: 50px;
-    min-height: 500px;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
-  }
-  
-  /* select all buttons inside grid, pointer, font border and background */
-  .calculator-grid > button {
-    cursor: pointer;
-    font-size: 2rem;
-    color: white;
-    border: 1px solid #091921;
-    background-color: #0c2835;
-  }
-  
-  /* change hover color to neon green */
-  .calculator-grid > button:hover {
-    background-color: #74ff3b;
-    color:black;
-  }
-  
-  /* buttons to take 2 width */
-  .span-two {
-    grid-column: span 2;
-  }
-  
-  /* output screen,screen fills all the way from 1 to -1, white color, flex align items to flex end to be on right and justify space around to space between elements. flex direction column so they line up veritcally, add padding to push items closer to center. use word wrap to break words*/
-  .output {
-    grid-column: 1 / -1;
-    background-color: white;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-around;
-    flex-direction: column;
-    padding: 10px;
-    word-wrap: break-word;
-    word-break: break-all;
-  }
-  
-  /* previous operand output color and size */
-  .output .previous-operand {
-    color: grey;
-    font-size: 1.5rem;
-  }
-  
-  /* current operand color and size */
-  .output .current-operand {
-    color: black;
-    font-size: 2.5rem;
-  }
+	color: white;
+	margin-top: 50px;
+	text-align: center;
+	font-size: 80px;
+}
+
+/* dark background color */
+body {
+	background: #091921;
+}
+
+/* grid, center everything, take full height, grid temaplate columns and rows set sizing*/
+.calculator-grid {
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	margin-top: 50px;
+	min-height: 500px;
+	grid-template-columns: repeat(4, 100px);
+	grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+/* select all buttons inside grid, pointer, font border and background */
+.calculator-grid > button {
+	cursor: pointer;
+	font-size: 2rem;
+	color: white;
+	border: 1px solid #091921;
+	background-color: #0c2835;
+}
+
+/* change hover color to neon green */
+.calculator-grid > button:hover {
+	background-color: #74ff3b;
+	color: black;
+}
+
+/* buttons to take 2 width */
+.span-two {
+	grid-column: span 2;
+}
+
+/* output screen,screen fills all the way from 1 to -1, white color, flex align items to flex end to be on right and justify space around to space between elements. flex direction column so they line up veritcally, add padding to push items closer to center. use word wrap to break words*/
+.output {
+	grid-column: 1 / -1;
+	background-color: white;
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-around;
+	flex-direction: column;
+	padding: 10px;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+
+/* previous operand output color and size */
+.output .previous-operand {
+	color: grey;
+	font-size: 1.5rem;
+}
+
+/* current operand color and size */
+.output .current-operand {
+	color: black;
+	font-size: 2.5rem;
+}
 
 /* all clear button color */
 #ac {
-    background: #ff3077;
+	background: #ff3077;
 }
 
 /* change equal color */
 #equal {
-    background: #03b1ff;
+	background: #03b1ff;
 }
 
 /* set footer to be at bottom of page */
 footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background-color: black;
-    font-size: 16px;
-    color: #fff;
-    font-family: 'Roboto', arial;
-    text-align: center;
-  }
-  
-  /* let visited github link to remain white */
-  a:visited {
-    color: white;
-  }
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color: black;
+	font-size: 16px;
+	color: #fff;
+	font-family: "Roboto", arial;
+	text-align: center;
+}
+
+/* let visited github link to remain white */
+a:visited {
+	color: white;
+}
